@@ -14,6 +14,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
 import org.springframework.web.server.WebFilter
+import reactor.blockhound.BlockHound
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -26,6 +27,8 @@ class GatewayApplication {
 }
 
 fun main(args: Array<String>) {
+    BlockHound.install()
+
     runApplication<GatewayApplication>(*args) {
         addInitializers(beans {
             bean<PostWithCommentsComposer>()

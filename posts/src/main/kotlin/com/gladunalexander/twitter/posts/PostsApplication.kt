@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.runApplication
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.context.support.beans
+import reactor.blockhound.BlockHound
 
 @EnableAutoConfiguration
 @SpringBootConfiguration
@@ -12,6 +13,8 @@ import org.springframework.context.support.beans
 class PostsApplication
 
 fun main(args: Array<String>) {
+    BlockHound.install()
+
     runApplication<PostsApplication>(*args) {
         addInitializers(beansConfiguration())
     }
