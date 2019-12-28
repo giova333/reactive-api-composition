@@ -1,6 +1,7 @@
 package com.gladunalexander.twitter.gateway
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.SpringBootConfiguration
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.runApplication
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.cloud.client.loadbalancer.LoadBalanced
@@ -16,7 +17,8 @@ import org.springframework.web.reactive.function.server.router
 import org.springframework.web.server.WebFilter
 import reactor.blockhound.BlockHound
 
-@SpringBootApplication
+@SpringBootConfiguration
+@EnableAutoConfiguration
 @EnableDiscoveryClient
 class GatewayApplication {
 

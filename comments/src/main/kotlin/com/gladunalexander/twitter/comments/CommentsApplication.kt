@@ -1,12 +1,14 @@
 package com.gladunalexander.twitter.comments
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.SpringBootConfiguration
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.runApplication
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.context.support.beans
 import reactor.blockhound.BlockHound
 
-@SpringBootApplication
+@SpringBootConfiguration
+@EnableAutoConfiguration
 @EnableDiscoveryClient
 class CommentsApplication
 
